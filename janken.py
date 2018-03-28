@@ -1,47 +1,45 @@
+print("#######################################")
+print("Rock, Paper, Scissor - aka Jan-Ken-Pon")
+print("by Ana P. - March 2018")
+print("#######################################\n\n")
+
 from random import randint
- 
-print("#########################################")
-print("Let's play Rock, Paper Scissors!")
-print("##########################################\n\n")
 
-startGame = input("Shall we start?(y/n)\n")
+startGame = input("Start the game? Type 'Yes' or 'No'\n")
 
-while startGame == "y":
-	
-    #list of play options
+while startGame == "Yes":
+    #create a list of options
     playList = ["Rock", "Paper", "Scissors"]
-     
-    #random play to the computer
-    computer = playList[randint(0,2)]
-     
-    #loop starts: player set to False
-    player = False
-     
-    while player == False:
-    #player set to True
-        player = input("\nRock, Paper, Scissors?\n")
+    #assign a random play to the computer
+    computer = playList[randint(0,2)]	
+    #loop starts while player is equal 1
+    player = 1
+    #This keeps happening
+    while player == 1:
+        player = input("\nRock, Paper or Scissors?\n")
         if player == computer:
-            print("Tie! \n")
+            print("Tie!")
         elif player == "Rock":
             if computer == "Paper":
-                print("You lose!", computer, "covers", player, "\n")
+                print("You lose! " + computer + " covers " + player)
             else:
-                print("You win!", player, "smashes", computer, "\n")
+                print("You win! " + player + " smashes " + computer)
         elif player == "Paper":
             if computer == "Scissors":
-                print("You lose!", computer, "cut", player, "\n")
+                print("You lose! " + computer + " cut " + player)
             else:
-                print("You win!", player, "covers", computer,"\n")
+                print("You win! " + player + " covers " + computer)
         elif player == "Scissors":
             if computer == "Rock":
-                print("You lose...", computer, "smashes", player,"\n")
+                print("You lose! " + computer + " smashes " + player)
             else:
-                print("You win!", player, "cut", computer, "\n")
+                print("You win! " + player + "cut" + computer)
         else:
-            print("That's not a valid play. Check your spelling!\n")
-        #to continue loop, player set to False again
-        player = False
-        computer = playList[randint(0,2)]
+            print("This is not a valid play. Check your spelling!")
 
-if startGame == "n":
-    print("Come again later")
+    #To continue the loop forever
+    player = 1
+    computer = playList[randint(0,2)]
+		
+if startGame == "No":
+    print("Ok. Come again later!")
