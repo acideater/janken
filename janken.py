@@ -33,7 +33,7 @@ while startGame == "Yes":
             if computer == "Rock":
                 print("You lose! " + computer + " smashes " + player)
             else:
-                print("You win! " + player + "cut" + computer)
+                print("You win! " + player + " cut " + computer)
         else:
             print("This is not a valid play. Check your spelling!")
 
